@@ -1,0 +1,30 @@
+<div class="main-container" ng-hide="loading">
+
+  <div class="breadcrum">
+    <a class="breadcrum__item" href="#/">Accueil</a>
+    <span class="breadcrum__item">Fiche Super Heros</span>
+  </div>
+
+  <div class="hero-description">
+    <h2 class="h2 hero-description__title">{{ hero.name }}</h2>
+    <p class="hero-description__chapo">{{ hero.description }}</p>
+  </div>
+
+  <div class="hero-details">
+    <img class="hero-details__mea" src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt="">
+    <div class="hero-details__content">
+      <ul class="hero-details__list">
+        <h3 class="h3">Series</h3>
+        <li class="hero-details__list-item" ng-repeat="serie in hero.series.items" ng-if="hero.series.items.length > 0">{{ serie.name }}</li>
+        <li class="hero-details__list-item" ng-if="hero.series.items.length == 0">There is no serie for {{ hero.name }}</li>
+      </ul>
+      <ul class="hero-details__list">
+        <h3 class="h3">Stories</h3>
+        <li class="hero-details__list-item" ng-repeat="story in hero.stories.items" ng-if="hero.stories.items.length > 0">{{ story.name }}</li>
+        <li class="hero-details__list-item" ng-if="hero.stories.items.length == 0">There is no story for {{ hero.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="loader main-container" ng-show="loading">Chargement...</div>

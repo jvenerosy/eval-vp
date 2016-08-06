@@ -1,0 +1,11 @@
+////
+/// @group Grid
+////
+
+/// définition de la grille avec Susy
+$susy: (
+        gutter-position: inside-static,
+        container: 100%,
+        columns: 12,
+        column-width: 200px,
+);

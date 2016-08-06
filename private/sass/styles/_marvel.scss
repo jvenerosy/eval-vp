@@ -1,0 +1,249 @@
+// dans un plus grand contexte, je découperai ce fichier en plusieurs sous fichiers - à chaque commentaires de type /**/, pareil pour les couleurs etc...
+
+/*BASE*/
+body {
+  font-family: $t-text;
+  font-size: 62.5%;
+  background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/swirl_pattern.png);
+}
+
+a {
+  &:hover {
+    color: #f0141e;
+  }
+}
+
+/*EDITO*/
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: $t-title;
+}
+
+.h1 {
+  font-size: rem(30px);
+
+  @include breakpoint($b-tab) {
+    font-size: rem(40px);
+  }
+
+  @include breakpoint($b-desk) {
+    font-size: rem(50px);
+  }
+}
+
+.h2 {
+  font-size: rem(25px);
+
+  @include breakpoint($b-tab) {
+    font-size: rem(30px);
+  }
+
+  @include breakpoint($b-desk) {
+    font-size: rem(40px);
+  }
+}
+
+.h3 {
+  font-size: rem(25px);
+
+  @include breakpoint($b-desk) {
+    font-size: rem(30px);
+  }
+}
+
+.h4 {
+  font-size: rem(20px);
+
+  @include breakpoint($b-desk) {
+    font-size: rem(25px);
+  }
+}
+
+/*CONTAINER*/
+
+.main-container {
+  margin: 90px auto 0 auto;
+  padding: 0 $d-padding $d-padding;
+  font-size: rem(16px);
+  overflow: hidden;
+  @include container;
+
+  @include breakpoint($b-desk) {
+    width: 80%;
+    padding: 0;
+    font-size: rem(14px);
+  }
+}
+
+/*HEADER*/
+.header {
+  background: white;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 0px 10px 0px #656565;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  top: 0;
+  left: 0;
+
+  @include breakpoint($b-desk) {
+    margin-bottom: $d-margin-block;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+}
+
+.search {
+  display: block;
+  margin: 0 auto $d-margin-block/2;
+  padding: 10px;
+  font-size: rem(16px);
+  width: 95%;
+  font-family: $t-title;
+
+
+  @include breakpoint($b-desk) {
+    margin: $d-margin-block/2;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+  }
+}
+
+/*BREADCRUM*/
+.breadcrum {
+  padding: 0 0 $d-padding/2 0;
+  margin: 0 0 $d-margin-block;
+  border-bottom: 1px solid lightgrey;
+
+  &__item {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: $d-margin-block/2;
+
+      &:before {
+        content: '::';
+        margin-right: $d-margin-block/2;
+      }
+    }
+  }
+}
+
+/*HOMEPAGE*/
+.heroes {
+
+  &__single {
+    display: block;
+    margin-bottom: $d-margin-block;
+
+    @include breakpoint($b-tab) {
+      @include span(1 of 2);
+    }
+
+    @include breakpoint($b-desk) {
+      @include span(1 of 3);
+    }
+
+    @include breakpoint($b-xlarge) {
+      @include span(1 of 4);
+    }
+
+  }
+
+  &__cont {
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px #eee;
+
+    &:hover {
+      transition: .3s ease;
+      box-shadow: 0px 0px 15px 0px #bbb;
+    }
+  }
+
+  &__mea-container {
+    display: block;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  &__mea {
+    height: auto;
+    width: 100%;
+  }
+
+  &__title {
+    padding: $d-padding/2 0;
+  }
+
+  &__links {
+    border-top: 1px solid #ddd;
+    padding-top: $d-padding/2;
+  }
+
+  &__tag {
+    display: inline-block;
+    background: lightgrey;
+    padding: 3px;
+    font-size: rem(15px);
+
+    &:not(:first-child) {
+      margin-left : $d-margin-block/2;
+    }
+  }
+}
+
+/*SINGLE*/
+
+.hero-description {
+  margin: $d-margin-block 0;
+
+  &__chapo {
+    margin: $d-margin-block 0;
+  }
+}
+
+.hero-details {
+  @include container;
+  overflow: hidden;
+
+  &__mea {
+    width: 100%;
+
+    @include breakpoint($b-desk) {
+      @include span(1 of 4);
+      padding-left: 0;
+    }
+  }
+
+  &__content {
+    @include breakpoint($b-desk) {
+      @include span(3 of 4);
+    }
+  }
+
+  &__list {
+    margin-bottom: $d-margin-block;
+    background: white;
+    padding: $d-padding;
+  }
+
+  &__list-item {
+    padding: $d-padding/2;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid lightgrey;
+    }
+  }
+}

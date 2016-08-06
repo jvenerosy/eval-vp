@@ -1,0 +1,42 @@
+{
+  "name": "sitename",
+  "version": "0.0.0",
+  "description": "Description site",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "engines": {
+    "node": "4.2.6",
+    "npm": "3.5.2"
+  },
+  "scripts": {
+    "init": "npm install",
+    "clean": "rm -rf ./public",
+    "local": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvenerosy/starter-kit.git"
+  },
+  "author": "jvenerosy",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/jvenerosy/jvenerosy/issues"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "breakpoint-sass": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-webpack": "^1.5.0",
+    "susy": "^2.2.12"
+  },
+  "devDependencies": {
+  }
+}

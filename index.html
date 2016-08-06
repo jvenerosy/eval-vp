@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="marvel">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marvel Super Heroes</title>
+    <link rel="stylesheet" href="public/css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="h1 header__title"><a href="/">Marvel Super Heroes</a></h1>
+    </header>
+
+
+    <div ng-view></div>
+
+    <script src="http://lig-membres.imag.fr/donsez/cours/exemplescourstechnoweb/js_securehash/md5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+    <script src="private/js/app.js"></script>
+    <script src="private/js/service/factory.js"></script>
+    <script src="private/js/controller/home.js"></script>
+    <script src="private/js/controller/single.js"></script>
+  </body>
+</html>
