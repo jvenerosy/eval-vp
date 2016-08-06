@@ -1,3 +1,5 @@
-Project name
+EVAL VP
 =======
-author:  User name
+author:  Jvenerosy
+
+`npm install` then `gulp`
