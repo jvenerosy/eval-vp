@@ -1,11 +1,6 @@
-var project = {
-  title : "Marvel SH",
-  version : "1.0.0",
-  description : "Test for VP"
-};
-
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
+    cleanCSS = require('gulp-clean-css'),
     connect = require('gulp-connect');
 
 //html
@@ -21,7 +16,7 @@ gulp.task('sass', function () {
         .pipe($.sass().on('error', $.sass.logError))
 
         .pipe($.csscomb('private/sass/.csscomb.json'))
-
+        .pipe(cleanCSS())
         .pipe(gulp.dest('public/css'))
 
         .pipe(connect.reload());
@@ -29,10 +24,12 @@ gulp.task('sass', function () {
 
 //js
 gulp.task('javascript', function () {
-    gulp.src('private/js/**/*.js')
+    gulp.src(['private/js/vendors/md5.js', 'private/js/vendors/angular-1-12-16.min.js', 'private/js/vendors/angularRoute-1-2-1.min.js', 'private/js/app.js', 'private/js/service/factory.js', 'private/js/controller/home.js', 'private/js/controller/single.js'])
         .pipe($.plumber())
-        .pipe($.uglify())
-
+        .pipe($.concat('app.min.js'))
+        .pipe($.uglify({
+          mangle : false
+        }))
         .pipe(gulp.dest('public/js/'))
 
         .pipe(connect.reload());
