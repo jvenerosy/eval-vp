@@ -40,8 +40,17 @@ gulp.task('javascript', function () {
 gulp.task('connect', function() {
   connect.server({
     root: './',
-    port: process.env.PORT || 9740,
+    port: 9740,
     livereload: true
+  });
+});
+
+
+gulp.task('connectDeploy', function() {
+  connect.server({
+    root: './',
+    port: process.env.PORT,
+    livereload: false
   });
 });
 
@@ -57,4 +66,4 @@ gulp.task('watch', function () {
 gulp.task('default', ['connect', 'html', 'sass', 'javascript', 'watch']);
 
 //une fois déployé
-gulp.task('run', ['connect', 'html', 'sass', 'javascript']);
+gulp.task('run', ['connectDeploy', 'html', 'sass', 'javascript']);
