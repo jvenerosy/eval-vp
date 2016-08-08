@@ -1,7 +1,7 @@
 marvel.factory('heroFactory', function($http, $q) {
 
   var ts =  Date.now();
-  var baseURL = 'http://gateway.marvel.com:80';
+  var baseURL = 'https://gateway.marvel.com:80';
   var charURL = '/v1/public/characters';
   var pub = '298bab46381a6daaaee19aa5c8cafea5';
   var priv = 'b0223681fced28de0fe97e6b9cd091dd36a5b71d';
