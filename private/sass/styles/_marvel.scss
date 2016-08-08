@@ -1,11 +1,6 @@
 // dans un plus grand contexte, je découperai ce fichier en plusieurs sous fichiers - à chaque commentaires de type /**/, pareil pour les couleurs etc...
 
 /*BASE*/
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
 body {
   font-family: $t-text;
   font-size: 62.5%;
