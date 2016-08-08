@@ -63,4 +63,4 @@ gulp.task('watch', function () {
 gulp.task('default', ['connect', 'html', 'sass', 'javascript', 'watch']);
 
 //une fois déployé
-gulp.task('run', ['html', 'sass', 'javascript']);
+gulp.task('run', ['connectDeploy', 'html', 'sass', 'javascript']);
