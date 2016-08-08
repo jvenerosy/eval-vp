@@ -2,7 +2,7 @@
   <input class="search" type="text" placeholder="Rechercher un super héros..." ng-model="search">
   <div class="heroes__single" ng-repeat="hero in heroes | filter:search">
     <div class="heroes__cont">
-      <a href="#hero/{{ hero.id }}" class="heroes__mea-container"><img class="heroes__mea" src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt=""></a>
+      <a href="#hero/{{ hero.id }}" class="heroes__mea-container"><img class="heroes__mea" ng-src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt=""></a>
       <h4 class="h4 heroes__title"><a href="#hero/75">{{ hero.name }}</a></h4>
       <div class="heroes__links">
         <a class="heroes__tag" href="{{ link.url }}" ng-repeat="link in hero.urls">{{ link.type }}</a>
