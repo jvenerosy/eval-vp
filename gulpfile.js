@@ -50,8 +50,7 @@ gulp.task('connectDeploy', function() {
   connect.server({
     root: './',
     port: process.env.PORT,
-    livereload: false,
-    https: true
+    livereload: false
   });
 });
 
