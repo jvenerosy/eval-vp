@@ -45,6 +45,13 @@ gulp.task('connect', function() {
   });
 });
 
+//connect deploy
+gulp.task('connectDeploy', function() {
+  connect.server({
+    root: './',
+  });
+});
+
 gulp.task('watch', function () {
   gulp.watch(['./**/*.html'], ['html']);
   gulp.watch(['private/**/*.js'], ['javascript']);
@@ -56,4 +63,4 @@ gulp.task('watch', function () {
 gulp.task('default', ['connect', 'html', 'sass', 'javascript', 'watch']);
 
 //une fois déployé
-gulp.task('run', ['connect', 'html', 'sass', 'javascript']);
+gulp.task('run', ['html', 'sass', 'javascript']);
