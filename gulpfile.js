@@ -24,7 +24,7 @@ gulp.task('sass', function () {
 
 //js
 gulp.task('javascript', function () {
-    gulp.src(['private/js/vendors/md5.js', 'private/js/vendors/angular-1-12-16.min.js', 'private/js/vendors/angularRoute-1-2-1.min.js', 'private/js/app.js', 'private/js/service/factory.js', 'private/js/controller/home.js', 'private/js/controller/single.js'])
+    gulp.src(['private/js/vendors/*.js', 'private/js/app.js', 'private/js/service/factory.js', 'private/js/controller/home.js', 'private/js/controller/single.js'])
         .pipe($.plumber())
         .pipe($.concat('app.min.js'))
         .pipe($.uglify({

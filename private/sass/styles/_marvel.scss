@@ -247,3 +247,27 @@ a {
     }
   }
 }
+
+
+/*pagination*/
+.paginate {
+  margin: $d-margin-block auto;
+  text-align: center;
+  font-size: rem(24px);
+  font-family: $t-title;
+
+  &__item {
+    display: inline-block;
+    margin: $d-margin-block/4;
+  }
+
+  &__item-link {
+    display: block;
+    padding: 5px 10px;
+    background: white;
+
+    &--active, &:hover {
+      color: #f0141e;
+    }
+  }
+}

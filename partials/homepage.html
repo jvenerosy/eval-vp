@@ -10,4 +10,8 @@
     </div>
   </div>
 </div>
+<ul class="paginate main-container">
+  <li class="paginate__item" ng-repeat="n in pages"><a href="/#/{{n * numPerPage}}" ng-click="reloadRoute()" class="paginate__item-link" ng-class="{'paginate__item-link--active': n == $parent.offset / $parent.numPerPage}">{{ n + 1 }}</a></li>
+</ul>
+
 <div class="loader main-container" ng-show="loading">Chargement...</div>

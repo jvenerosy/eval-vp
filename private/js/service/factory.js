@@ -10,15 +10,17 @@ marvel.factory('heroFactory', function($http, $q) {
   var factory = {
       heroes : false,
 
-      getHeroes : function(){
+      getHeroes : function(offset){
         var deferred = $q.defer();
+    
 
         if(factory.heroes != false) {
-          deferred.resolve(factory.heroes.data.results);
+          deferred.resolve(factory.heroes.data);
         } else {
           $http.get(baseURL + charURL, {
             params: {
               limit: 50,
+              offset: offset,
               ts: ts,
               apikey: pub,
               hash: hash
@@ -27,7 +29,7 @@ marvel.factory('heroFactory', function($http, $q) {
           .success(function(data, status){
             factory.heroes = data;
 
-            deferred.resolve(factory.heroes.data.results)
+            deferred.resolve(factory.heroes.data)
           })
           .error(function(data, status){
             deferred.reject('Impossible de récupérer les données')
@@ -43,7 +45,7 @@ marvel.factory('heroFactory', function($http, $q) {
         var hero = {};
 
         var heroes = factory.getHeroes().then(function(heroes){
-          angular.forEach(heroes, function(value, key) {
+          angular.forEach(heroes.results, function(value, key) {
             if(value.id == id) {
               hero = value;
             }
